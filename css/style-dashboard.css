@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #ece4f3;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #692b71;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  color: #692b71;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+    max-width: 300px; 
+  }
+  
+  .action-button {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    width: 120px; 
+    height: 120px; 
+    max-width: 100%; 
+  }
+  
+  .action-button.scanner {
+    background-color: #EFEEFC;
+    color: black;
+  }
+  
+  .action-button.create {
+    background-color: #692b71;
+    color: white;
+  }
+  
+  .qr-code {
+    margin-bottom: 6px; 
+    display: flex;
+    justify-content: center;
+  }
+  
+  .qr-code svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .icon {
+    font-size: 20px; 
+    margin-bottom: 6px;
+  }
+  
+  .button-title {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  
+  .button-subtitle {
+    font-size: 10px;
+    opacity: 0.8;
+  }
+
+.pages-section {
+  background: white;
+  border-radius: 25px;
+  padding: 16px;
+  color: black;
+  height: 550px;
+}
+
+.pages-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #692b71;
+}
+
+.no-pages {
+  color: #050505;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.create-page-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #692b71;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 8px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.create-page-button:hover {
+  background: #9c27b0;
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .action-buttons {
+    gap: 10px;
+  }
+
+  .action-button {
+    padding: 12px;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+}

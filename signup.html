@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="/css/style-signup.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <a href="login.html" class="back-home">
+        <span class="material-icons">arrow_back</span>
+      </a>
+    <div class="signup-container">
+      <h1 style="font-size: 24px; font-weight: 600; margin-bottom: 30px">
+        Inscription
+      </h1>
+
+      <!-- Inscription par email -->
+      <button class="mail-btn" onclick="steep()">
+        <span class="material-icons" style="font-size: 18px; margin-right: 10px"
+          >mail</span
+        >
+        Inscription par mail
+      </button>
+
+      <!-- Inscription avec Google -->
+      <button class="google-btn">
+        <img
+          src="https://www.svgrepo.com/show/475656/google-color.svg"
+          alt="Google"
+        />
+        Inscription avec Google
+      </button>
+
+      <p class="already">
+        Vous avez déjà un compte ? <a href="login-connect.html">Connexion</a>
+      </p>
+
+      <p class="terms">
+        En continuant vous acceptez les <a href="#">Conditions Générales</a> &
+        <a href="#">Politique de confidentialité</a>.
+      </p>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

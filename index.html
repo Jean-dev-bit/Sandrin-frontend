@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jean-Pierre Morel</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-header">
+        <img
+          src="/images/18707.jpg"
+          alt="Photo de couverture"
+          class="cover-image"
+        />
+        <div class="profile-info">
+          <img
+            src="/images/pepe.jpg"
+            alt="Photo de profil"
+            class="profile-photo"
+          />
+          <div class="info-bar">
+            <h1>Jean-Pierre Morel</h1>
+            <i class="bx bx-share-alt share-icon"></i>
+          </div>
+          <p class="dates">15 Mars 1945 - 22 Janvier 2025</p>
+        </div>
+      </div>
+
+      <nav class="navigation">
+        <button class="nav-button active" data-section="biographie">
+          Biographie
+        </button>
+        <button class="nav-button" data-section="localisation">
+          Localisation
+        </button>
+        <button class="nav-button" data-section="photos">Photos</button>
+        <button class="nav-button" data-section="videos">Vidéos</button>
+        <button class="nav-button" data-section="souvenir">Souvenir</button>
+      </nav>
+
+      <div class="content-container">
+        <div class="content-section active" id="biographie">
+          <p>
+            Jean-Pierre Morel est né le 15 mars 1945 dans un petit village de
+            Bourgogne, où il a grandi entouré de ses parents et de ses deux
+            frères. Passionné de nature, il aimait passer son temps à explorer
+            les forêts environnantes et à pêcher dans les rivières locales.
+            <br /><br />
+            Après des études en architecture à Paris, Jean-Pierre a consacré sa
+            vie à la création sz bâtiments qui alliaient esthétique et respect
+            de l'environement. Ses réalisations, souvent isnpirées par les
+            paysages naturels de son enfance, sont devenues des références en
+            matière d'architecture durable.
+            <br /><br />
+            Marié à son amour de jeunesse, Sophie, pendant plus de 50ans,
+            Jean-Pierre était un père aimant pour les trois enfants et un
+            grand-père dévoué à leurs cinq petits-enfants. Il adorait partager
+            des histoires captivantes et des moments chaleureux avec sa famille.
+            <br /><br />
+            Jean-Pierre avait également une âme voyageuse, parcourant le monde
+            avec Sophie pour découvrir d'autres cultures et s'enrichir de
+            nouvelles expériences. Malgré ses nombreuses réalisations, il est
+            resté humble, mettant toujours l'accent sur l'importance des liens
+            humains.
+            <br /><br />
+            Il s'est éteint paisiblement à l'âge de 79ans, entouré de sa
+            famille. Jean-Pierre repose désormais au cimetière Saint-Martin de
+            Lyon, où ses proches viennent se receuillir et célébrer la mémoire
+            d'un homme au grand coeur, dont les valeurs continuent d'inspirer
+            tous ceux qui l'ont connu.
+          </p>
+          <button class="action-button">Modifier</button>
+        </div>
+        <div class="content-section" id="localisation">
+          <p class="section-header">15 places des oiseaux 75008 Paris</p>
+          <div class="googlemaps">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63588.63226330579!2d2.3522!3d48.8566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d639f1b8f7%3A0x40c9a89a053efc0!2sParis%2C%20France!5e0!3m2!1sfr!2s!4v1700000000000!5m2!1sfr!2s"
+              allowfullscreen
+              loading="lazy"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <button class="action-button">Modifier</button>
+        </div>
+        <div class="content-section" id="photos">
+          <div class="gallery">
+            <img src="/images/pepe.jpg" alt="Photo 1" />
+            <img src="/images/pepe.jpg" alt="Photo 2" />
+          </div>
+          <div class="gallery">
+            <img src="/images/pepe.jpg" alt="Photo 1" />
+            <img src="/images/pepe.jpg" alt="Photo 2" />
+          </div>
+          <div class="gallery">
+            <img src="/images/pepe.jpg" alt="Photo 1" />
+            <img src="/images/pepe.jpg" alt="Photo 2" />
+          </div>
+          <button class="action-button" style="display: flex; justify-content: space-between;">
+            Ajouter 
+            <span>6/50</span>
+          </button>
+        </div>
+        <div class="content-section" id="videos">
+          <video controls>
+            <source src="/images/video.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="/images/video.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="/images/video.mp4" type="video/mp4" />
+          </video>
+          <button class="action-button" style="display: flex; justify-content: space-between;">
+            Ajouter 
+            <span>3/50</span>
+          </button>
+        </div>
+        <div class="content-section" id="souvenir">
+          <a href="/login" target="_blank"><i class="fas fa-check"></i> Connectez-vous pour poster</a>
+          <p class="no-comments">Aucun commentaire</p>
+        </div>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

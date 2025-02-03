@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription Étapes</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+    <script defer src="/js/script.js"></script>
+  </head>
+  <body>
+    <a href="login.html" class="back-home">
+      <span class="material-icons">arrow_back</span>
+    </a>
+    <div class="signup-container">
+
+      <button class="back-btn" onclick="prevStep()">←</button>
+
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+
+
+      <form id="signup-form">
+
+        <div class="step active">
+          <h2>Votre adresse email</h2>
+          <input
+            type="email"
+            id="email"
+            placeholder="Entrez votre email"
+            required
+          />
+          <button type="button" onclick="nextStep()">Suivant</button>
+        </div>
+
+
+        <div class="step">
+          <h2>Un mot de passe ?</h2>
+          <input
+            type="password"
+            id="password"
+            placeholder="Mot de passe"
+            required
+          />
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirmer le mot de passe"
+            required
+          />
+          <p class="info">
+            Le mot de passe doit contenir au moins 8 caractères, une majuscule,
+            un chiffre et un caractère spécial.
+          </p>
+          <button type="button" onclick="nextStep()">Suivant</button>
+        </div>
+
+        <div class="step">
+          <h2>Votre nom</h2>
+          <input type="text" id="fullname" placeholder="Nom complet" required />
+          <button type="button" class="finish-btn" onclick="index()">Terminer</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="hearts-container"></div>
+  </body>
+</html>
