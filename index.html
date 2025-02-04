@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jean-Pierre Morel</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -26,8 +29,12 @@
             class="profile-photo"
           />
           <div class="info-bar">
-            <h1>Jean-Pierre Morel</h1>
-            <i class="bx bx-share-alt share-icon"></i>
+            <h1>Jean-Pierre MOREL</h1>
+            <i
+              class="bx bx-share-alt share-icon"
+              id="partager"
+              onclick="openModal('share-modal')"
+            ></i>
           </div>
           <p class="dates">15 Mars 1945 - 22 Janvier 2025</p>
         </div>
@@ -106,8 +113,11 @@
             <img src="/images/pepe.jpg" alt="Photo 1" />
             <img src="/images/pepe.jpg" alt="Photo 2" />
           </div>
-          <button class="action-button" style="display: flex; justify-content: space-between;">
-            Ajouter 
+          <button
+            class="action-button"
+            style="display: flex; justify-content: space-between"
+          >
+            Ajouter
             <span>6/50</span>
           </button>
         </div>
@@ -121,17 +131,78 @@
           <video controls>
             <source src="/images/video.mp4" type="video/mp4" />
           </video>
-          <button class="action-button" style="display: flex; justify-content: space-between;">
-            Ajouter 
+          <button
+            class="action-button"
+            style="display: flex; justify-content: space-between"
+          >
+            Ajouter
             <span>3/50</span>
           </button>
         </div>
         <div class="content-section" id="souvenir">
-          <a href="/login" target="_blank"><i class="fas fa-check"></i> Connectez-vous pour poster</a>
+          <h2>Poster un mémoire</h2>
+          <div class="memora">
+            <textarea id="memora" rows="5" cols="50">Votre message</textarea>
+            <div class="form-actions">
+              <button
+                type="button"
+                class="upload-button"
+                onclick="document.getElementById('file-input').click()"
+                style="margin-left: auto;"
+              >
+                <i class="bx bx-image-add" style="font-size: 14px;">Ajouter une image</i>
+              </button>
+              <input
+                type="file"
+                id="file-input"
+                style="display: none"
+                onchange="handleFileUpload(event)"
+              />
+              <button type="submit" class="submit-button" style="margin-right: auto;">Publier</button>
+            </div>
+          </div>
+          <a href="/login" target="_blank"
+            ><i class="fas fa-check"></i> Connectez-vous pour poster</a
+          >
           <p class="no-comments">Aucun commentaire</p>
         </div>
       </div>
     </div>
-    <script src="/js/script.js"></script>
+    <div id="share-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('share-modal')">&times;</span>
+        <h2>Partager sur les réseaux sociaux</h2>
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/sharer/sharer.php"
+            class="social-icon facebook"
+            onclick="shareOnFacebook()"
+            target="_blank"
+          >
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?text="
+            class="social-icon whatsapp"
+            onclick="shareOnWhatsApp()"
+            target="_blank"
+          >
+            <i class="bx bxl-whatsapp"></i>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url="
+            class="social-icon twitter"
+            onclick="shareOnTwitter()"
+            target="_blank"
+          >
+            <i class="bx bx-x"></i>
+          </a>
+          <a href="#" class="social-icon copy" onclick="copyLink(this)">
+            <i class="bx bx-copy"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>

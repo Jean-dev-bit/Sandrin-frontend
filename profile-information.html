@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/profile.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jean-Pierre MOREL</title>
-  </head>
-  <body>
-    <div class="headers">
-      <a href="login.html" class="back-home">
-        <span class="material-icons">arrow_back</span>
-      </a>
-      <div class="informations">
-        <span class="informations-title">Mon Compte</span>
-        <span class="informations-text">Jean-Baptiste Yémalin</span>
-      </div>
-      <a href="logout.html" class="back-home">
-        <span class="material-icons">logout</span>
-      </a>
-    </div>
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+<body>
     <div class="container">
-      <div class="content">
-        <div class="profile-picture">
-          <img src="/images/avatar.jpg" alt="Photo de profil" />
+        <header class="top-header">
+            <button class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1>Mon compte</h1>
+            <button class="logout-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10"/>
+                </svg>
+            </button>
+        </header>
+
+        <div class="user-section">
+            <div class="avatar-container">
+                <img src="./images/avatar.jpg" alt="Photo de profil" class="avatar">
+            </div>
+            <span class="subtitle">Jean-Pierre MOREL</span>
         </div>
-        <div class="language-selector">
-          <span class="label">Langue</span>
-          <div class="flags">
-            <img
-              src="https://www.worldometers.info/img/flags/es-flag.gif"
-              alt="Espagne"
-            />
-            <img
-              src="https://www.worldometers.info/img/flags/is-flag.gif"
-              alt="Islande"
-            />
-            <img
-              src="https://www.worldometers.info/img/flags/cv-flag.gif"
-              alt="Cap-Vert"
-            />
-            <img
-              src="https://www.worldometers.info/img/flags/bn-flag.gif"
-              alt="Bénin"
-            />
-          </div>
+
+        <div class="content">
+            <section class="language-section">
+                <h2>Langues</h2>
+                <div class="flags">
+                    <button class="flag-btn">
+                        <svg width="32" height="24" viewBox="0 0 32 24">
+                            <rect width="32" height="24" fill="#012169"/>
+                            <path d="M0 0l32 24M32 0L0 24" stroke="#fff" stroke-width="4"/>
+                            <path d="M16 0v24M0 12h32" stroke="#fff" stroke-width="8"/>
+                            <path d="M16 0v24M0 12h32" stroke="#C8102E" stroke-width="4"/>
+                        </svg>
+                    </button>
+                    <button class="flag-btn">
+                        <svg width="32" height="24" viewBox="0 0 32 24">
+                            <rect width="10.66" height="24" fill="#002395"/>
+                            <rect x="10.66" width="10.66" height="24" fill="#fff"/>
+                            <rect x="21.32" width="10.66" height="24" fill="#ED2939"/>
+                        </svg>
+                    </button>
+                    <button class="flag-btn">
+                        <svg width="32" height="24" viewBox="0 0 32 24">
+                            <rect width="32" height="24" fill="#AA151B"/>
+                            <rect width="32" height="8" fill="#F1BF00"/>
+                            <rect y="16" width="32" height="8" fill="#F1BF00"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Nom complet</h2>
+                <input type="text" value="Jean-Baptiste" readonly>
+            </section>
+
+            <section class="info-section">
+                <h2>Informations de connexion</h2>
+                <div class="email-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                    <span style="font-size: 16px;">jeanbaptistehouetchowanou@gmail.com</span>
+                </div>
+            </section>
         </div>
-        <div class="full-name">
-          <label for="name" class="label">Nom complet</label>
-          <input
-            type="text"
-            id="name"
-            value="HOUETCHOWANOU Jean-Baptiste Yémalin"
-          />
-        </div>
-        <div class="connection-info">
-          <span class="label">Informations de connexion</span>
-          <div class="auth-icon">
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google"
-            />
-            <span style="font-size: 14px; color: #692b71"
-              >yemalindev2002@gmail.com</span
-            >
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
 </html>

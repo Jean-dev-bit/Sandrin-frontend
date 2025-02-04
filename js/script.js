@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function login() {
   window.location.href = "login-connect.html";
 }
-
+function newpage() {
+  window.location.href = "newpage.html";
+}
 function signup() {
-    window.location.href = "signup.html";
-  }
+  window.location.href = "signup.html";
+}
 
 let currentStep = 0;
 const steps = document.querySelectorAll(".step");
@@ -122,5 +124,79 @@ document.querySelectorAll(".action-button").forEach((button) => {
 
   button.addEventListener("mouseout", () => {
     button.style.transform = "scale(1)";
+  });
+});
+
+document.getElementById("partager").addEventListener("click", function () {
+  openModal("share-modal");
+});
+
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.remove("hidden");
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal(modalId);
+    }
+  });
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.add("hidden");
+}
+
+function shareOnFacebook() {
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    currentUrl
+  )}`;
+  window.open(facebookUrl, "_blank");
+}
+
+function shareOnWhatsApp() {
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+    currentUrl
+  )}`;
+  window.open(whatsappUrl, "_blank");
+}
+
+function shareOnTwitter() {
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    currentUrl
+  )}&text=Découvrez ce site incroyable!`;
+  window.open(twitterUrl, "_blank");
+}
+
+function copyLink(element) {
+  const currentUrl = window.location.href;
+  navigator.clipboard
+    .writeText(currentUrl)
+    .then(() => {
+      const icon = element.querySelector("i");
+
+      element.innerHTML = '<i class="bx bx-check"></i> Copié';
+
+      setTimeout(() => {
+        element.innerHTML = '<i class="bx bx-clipboard"></i>';
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la copie du lien :", err);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const statusButtons = document.querySelectorAll(".status");
+  const createButton = document.querySelector(".create-btn");
+
+  statusButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      statusButtons.forEach((btn) => btn.classList.remove("active"));
+
+      this.classList.add("active");
+
+      createButton.classList.add("active");
+      createButton.removeAttribute("disabled");
+    });
   });
 });
