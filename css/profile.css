@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   background-color: #ECE4F3;
   min-height: 100vh;
@@ -25,6 +25,10 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+.subtitles{
+  font-size: 14px;
+  color: #333;
 }
 
 .top-header h1 {
@@ -83,9 +87,10 @@ body {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 16px;
   color: #692B71;
   margin-bottom: 16px;
+  font-weight: normal;
 }
 
 .flags {
@@ -108,10 +113,10 @@ h2 {
 
 input[type="text"] {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 14px;
   color: #333;
   outline: none;
 }
@@ -122,6 +127,19 @@ input[type="text"] {
   gap: 12px;
   color: #666;
   font-size: 14px;
+}
+
+.edit-btn {
+  background-color: #692b71;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  transition: background-color 0.2s;
+  margin-top: 20px;
 }
 
 @media (max-width: 480px) {

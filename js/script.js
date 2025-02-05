@@ -174,7 +174,7 @@ function copyLink(element) {
     .then(() => {
       const icon = element.querySelector("i");
 
-      element.innerHTML = '<i class="bx bx-check"></i> Copié';
+      element.innerHTML = '<i class="bx bx-check"></i>';
 
       setTimeout(() => {
         element.innerHTML = '<i class="bx bx-clipboard"></i>';
@@ -200,3 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+function creerPage() {
+  window.location.href = "page-create.html";
+}

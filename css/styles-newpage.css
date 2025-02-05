@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ece4f3;
@@ -12,11 +20,16 @@ header {
   align-items: center;
   justify-content: space-between;
   background: #692b71;
-  margin: 20px auto;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   width: 60%;
-  max-width: 800px;
+  max-width: 600px;
   text-align: left;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-bottom: 4rem;
 }
 
 #back-button {
@@ -51,8 +64,9 @@ p {
   padding: 20px;
   border-radius: 10px;
   width: 60%;
-  max-width: 800px;
+  max-width: 600px;
   text-align: left;
+  height: 550px;
 }
 
 label {
@@ -62,7 +76,7 @@ label {
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 20px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -88,19 +102,21 @@ input {
 
 .create-btn {
   width: 100%;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 15px;
+  margin-top: 30px;
   background: #692b71;
   border: none;
   border-radius: 15px;
+  font-weight: bold;
   cursor: pointer;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (max-width: 660px) {
   header {
     width: 100%;
+    margin-bottom: 4rem;
   }
   .container {
     width: 100%;
@@ -127,12 +143,53 @@ input {
   }
   .create-btn {
     width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background: #eee;
+    padding: 15px;
+    margin-top: 30px;
+    background: #692b71;
     border: none;
+    border-radius: 15px;
     font-weight: bold;
-    border-radius: 5px;
-    cursor: not-allowed;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
   }
+}
+
+.status-radio {
+  display: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 15px;
+  margin: 5px;
+  background: #f3effd;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 30%;
+}
+
+#public:checked + label {
+  background: #692b71;
+  color: white;
+}
+#protect:checked + label {
+  background: #692b71;
+  color: white;
+}
+#private:checked + label {
+  background: #692b71;
+  color: white;
+}
+
+#public:checked ~ #status-container {
+  content: "Votre page est publique et visible par tout le monde.";
+}
+#protect:checked ~ #status-container {
+  content: "Votre page est cachée et accessible seulement via un lien.";
+}
+#private:checked ~ #status-container {
+  content: "Votre page est privée et seulement visible par vous.";
 }

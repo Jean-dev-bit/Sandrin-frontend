@@ -1,4 +1,3 @@
-/* Style général */
 body {
     font-family: Rubik,sans-serif;
     background-color: #ece4f3;
@@ -26,7 +25,6 @@ body {
 }
 
 
-/* Conteneur */
 .signup-container {
     padding: 30px;
     border-radius: 10px;
@@ -35,7 +33,7 @@ body {
     text-align: center;
 }
 
-/* Bouton email */
+
 .mail-btn {
     width: 100%;
     display: flex;
@@ -53,8 +51,6 @@ body {
 }
 
 
-
-/* Bouton Google */
 .google-btn {
     width: 100%;
     display: flex;
@@ -75,7 +71,6 @@ body {
     margin-right: 10px;
 }
 
-/* Lien connexion */
 .already {
     margin-top: 6rem;
     font-size: 14px;
@@ -88,7 +83,6 @@ body {
 }
 
 
-/* Conditions générales */
 .terms {
     font-size: 14px;
     color: #777;

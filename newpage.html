@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nouvelle Page</title>
-    <link rel="stylesheet" href="css/styles-newpage.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles-newpage.css" />
+  </head>
+  <body>
     <header>
-        <button id="back-button">←</button>
-        <div class="title">
-            <h1>Nouvelle page</h1>
-            <p>Créer une nouvelle page</p>
-        </div>
+      <button id="back-button">←</button>
+      <div class="title">
+        <h1 style="margin-bottom: 10px">Nouvelle page</h1>
+        <p>Créer une nouvelle page</p>
+      </div>
     </header>
 
     <main>
-        <div class="container">
-            <label for="nom">Nom de la personne</label>
-            <input type="text" id="nom" placeholder="Nom de la personne">
+      <div class="container">
+        <label for="nom">Nom de la personne</label>
+        <input type="text" id="nom" placeholder="Nom de la personne" />
+        <p>Statut de la page</p>
+        <div class="status-options">
+          <input type="radio" id="public" name="status" class="status-radio" />
+          <label for="public" class="status">Publique</label>
 
-            <p>Statut de la page</p>
-            <div class="status-options">
-                <button class="status">Publique</button>
-                <button class="status">Cachée</button>
-                <button class="status">Privée</button>
-            </div>
+          <input type="radio" id="protect" name="status" class="status-radio" />
+          <label for="protect" class="status">Cachée</label>
 
-            <button class="create-btn">Créer la page</button>
+          <input type="radio" id="private" name="status" class="status-radio" />
+          <label for="private" class="status">Privée</label>
         </div>
+        <p id="status-container"></p>
+        <button class="create-btn" onclick="creerPage()">Créer la page</button>
+      </div>
     </main>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>

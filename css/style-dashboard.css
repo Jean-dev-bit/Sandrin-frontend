@@ -32,21 +32,21 @@ body {
 }
 
 .logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .user-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .user-details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile {
@@ -64,80 +64,93 @@ body {
 }
 
 .welcome {
-  font-size: 14px;
+  font-size: 22px;
   margin-bottom: 4px;
-  font-weight: bold;
+  font-weight: normal;
   color: #692b71;
 }
-
+.qr-code {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
 .username {
-  font-size: 18px;
-  font-weight: bold;
-  color: #692b71;
+  font-size: 32px;
+  font-weight: normal;
+  color: #6b7280;
   margin-bottom: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .action-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 20px;
-    max-width: 300px; 
-  }
-  
-  .action-button {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s;
-    width: 120px; 
-    height: 120px; 
-    max-width: 100%; 
-  }
-  
-  .action-button.scanner {
-    background-color: #EFEEFC;
-    color: black;
-  }
-  
-  .action-button.create {
-    background-color: #692b71;
-    color: white;
-  }
-  
-  .qr-code {
-    margin-bottom: 6px; 
-    display: flex;
-    justify-content: center;
-  }
-  
-  .qr-code svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .icon {
-    font-size: 20px; 
-    margin-bottom: 6px;
-  }
-  
-  .button-title {
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
-  
-  .button-subtitle {
-    font-size: 10px;
-    opacity: 0.8;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.action-button {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
+}
+
+.action-button.scanner {
+  background-color: white;
+  color: black;
+}
+
+.action-button.create {
+  background-color: white;
+  color: white;
+}
+
+.qr-code {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #692b71;
+  border-radius: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.button-title {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #692b71;
+}
+.button-titles {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #692b71;
+}
+.button-subtitle {
+  font-size: 10px;
+  opacity: 0.8;
+  color: #692b71;
+}
 
 .pages-section {
   background: white;
@@ -150,16 +163,47 @@ body {
 .pages-title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   color: #692b71;
+  text-align: center;
 }
 
 .no-pages {
   color: #050505;
   font-size: 14px;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.pages-feed{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ECE4F3;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.pages-feed-text{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pages-feed-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  object-fit: cover;
+}
+.pages-feed-title{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .create-page-button {
   display: flex;
   align-items: center;
@@ -174,16 +218,15 @@ body {
   transition: background-color 0.2s;
 }
 
-.create-page-button:hover {
-  background: #9c27b0;
-}
-
 
 @media (max-width: 480px) {
   .container {
     padding: 16px;
   }
-
+  .welcome {
+    font-size: 22px;
+    font-weight: normal;
+  }
   .action-buttons {
     gap: 10px;
   }
@@ -193,6 +236,8 @@ body {
   }
 
   .username {
-    font-size: 16px;
+    font-size: 28px;
+    font-weight: normal;
   }
 }
+

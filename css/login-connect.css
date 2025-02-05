@@ -34,6 +34,8 @@ body {
 h1{
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #692b71;
+    font-weight: normal;
 }
 
 .google-btn img {
@@ -71,7 +73,6 @@ input::placeholder {
     font-size: 12px;
 }
 
-/* Bouton connexion */
 .login-btn {
     background-color: #692b71;
     color: white;
@@ -81,11 +82,11 @@ input::placeholder {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 
 
-/* Liens */
 .links {
     margin-top: 15px;
 }
@@ -101,8 +102,6 @@ input::placeholder {
 }
 
 
-
-/* Conditions générales */
 .terms {
     font-size: 12px;
     color: #777;

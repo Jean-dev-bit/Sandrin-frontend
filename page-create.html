@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de modification</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylePage.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Sandrin</h2>
+            <button class="mediation-btn">Acheter une médiation</button>
+        </header>
+
+        <div class="content">
+            <button class="modify-btn">Modifier</button>
+
+            <form>
+                <div class="form-group">
+                    <label>Nom de la personne</label>
+                    <input type="text" value="Sandrin">
+                </div>
+
+                <div class="form-group">
+                    <label>Date de naissance / décès</label>
+                    <div class="date-group">
+                        <input type="text" placeholder="JJ/MM/AAAA">
+                        <input type="text" placeholder="JJ/MM/AAAA">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Localisation</label>
+                    <input type="text" placeholder="Adresse ou localisation">
+                </div>
+
+                <button class="generate-btn">
+                    <span class="material-icons">auto_stories</span> Générer une biographie
+                </button>
+
+                <div class="form-group">
+                    <label>Biographie</label>
+                    <textarea rows="6"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Liens</label>
+                    <div class="link-group">
+                        <input type="text" placeholder="Ajouter un lien">
+                        <button class="add-link-btn">+</button>
+                    </div>
+                </div>
+
+                <button class="reset-btn">
+                    <span class="material-icons">cancel</span> Réinitialiser les données
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
