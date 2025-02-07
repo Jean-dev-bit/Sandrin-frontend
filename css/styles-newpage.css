@@ -27,8 +27,8 @@ header {
   width: 60%;
   max-width: 600px;
   text-align: left;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin-bottom: 4rem;
 }
 

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jean-Pierre Morel</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="containers">
+        <header class="top-header">
+            <button class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <h1>Jean-Pierre Morel</h1>
+            <button class="settings-button" onclick="settings()">
+                <span class="material-icons">settings</span>
+            </button>
+        </header>
+
+        <div class="medailon">
+            <span style="color: #333; font-size: 14px">Aucun medaillon lié</span>
+            <span class="medailon-btn">Acheter un medaillon</span>
+        </div>
+
+        <div class="medailons">
+            <span class="tab-btn active" data-tab="modifier">Modifier</span>
+            <span class="tab-btn" data-tab="profil">Photo de profil</span>
+            <span class="tab-btn" data-tab="medias">Medias</span>
+        </div>
+
+        <div class="container">
+            <!-- Section Modifier -->
+            <div id="modifier" class="content-section active">
+                <form id="mainForm">
+                    <div class="form-group">
+                        <label>Nom de la personne</label>
+                        <input type="text" value="Sandrin" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date de naissance / décès</label>
+                        <div class="date-group">
+                            <input type="text" placeholder="JJ/MM/AAAA" />
+                            <input type="text" placeholder="JJ/MM/AAAA" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Localisation</label>
+                        <input type="text" placeholder="Adresse ou localisation" />
+                    </div>
+
+                    <button type="button" class="generate-btn" id="generateBio">
+                        <span class="material-icons">auto_stories</span>
+                        Générer une biographie
+                    </button>
+
+                    <div class="form-group">
+                        <label>Biographie</label>
+                        <textarea rows="6"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Liens</label>
+                        <div class="link-group">
+                            <input type="text" id="linkInput" placeholder="Ajouter un lien" />
+                            <button type="button" class="add-link-btn" id="addLink">
+                                +
+                            </button>
+                        </div>
+                        <div id="linksList" class="links-list"></div>
+                    </div>
+
+                    <button type="button" class="reset-btn">
+                        <span class="material-icons">cancel</span> Réinitialiser les
+                        données
+                    </button>
+                </form>
+            </div>
+
+            <!-- Section Profil -->
+            <div id="profil" class="content-section">
+                <h2 class="text-generate-profile">Modifier le profil</h2>
+                <img id="profile-pic" src="images/avatar.jpg" alt="Photo de profil" />
+                <input type="file" id="upload-input" accept="image/*" class="images" />
+                <button id="upload-btn">Changer de photo</button>
+
+                <!-- Informations du profil -->
+                <div class="profile-info">
+                    <label for="username">Nom :</label>
+                    <input type="text" id="username" value="Jean Dupont" />
+
+                    <label for="gender">Genre :</label>
+                    <select id="gender">
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+
+                    <label for="bio">Biographie :</label>
+                    <textarea id="bio" placeholder="Parle un peu de toi..."
+                        style="textarea::placeholder{color:#333; font-size: 14px;}"></textarea>
+                </div>
+
+                <!-- Bouton de sauvegarde -->
+                <button id="save-btn">Enregistrer les modifications</button>
+            </div>
+            <!-- Section Medias -->
+            <div id="medias" class="content-section">
+                <h2>Medias</h2>
+
+                <!-- Liste des vidéos -->
+                <div class="video-section">
+                    <h3>Vidéos</h3>
+                    <video controls>
+                        <source src="images/video.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                </div>
+
+                <!-- Liste des images -->
+                <div class="image-section">
+                    <h3>Images</h3>
+                    <img src="images/pepe.jpg" alt="Description de l'image" />
+                </div>
+
+                <!-- Liste des liens -->
+                <div class="links-section">
+                    <h3>Liens</h3>
+                    <ul>
+                        <li><a href="https://example.com" target="_blank">https://jeanpierre@morel.com</a></li>
+                        <li><a href="https://another-example.com" target="_blank">https://jeanpierre@morel.com</a></li>
+                    </ul>
+                </div>
+                <button id="save-btn">Ajouter un média</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Générer Biographie -->
+    <div class="modal" id="bioModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="back-arrow">&lt;</span>
+                <h2 class="text-generate-bio">Générer une Biographie</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div id="step1" class="bio-step active">
+                    <h3 class="text-generate-bio">
+                        Répondez à une dizaine de questions simples sur votre proche pour
+                        rédiger sa biographie.
+                    </h3>
+                    <p class="text-generate-bio">
+                        Ne vous inquiétez pas si vous répétez certaines informations dans
+                        vos réponses
+                    </p>
+                    <h4 class="text-generate-bio">Sommaire</h4>
+                    <ul class="summary-list">
+                        <li>Nom complet</li>
+                        <li>Date et lieu de naissance</li>
+                        <li>Date et lieu de décès</li>
+                        <li>Moments marquants de la vie</li>
+                        <li>Metiers ou occupations</li>
+                        <li>Centres d'intérêt, passions, hobbies</li>
+                        <li>Moments de réussite ou accomplissement</li>
+                        <li>Trait de caractère ou qualités humaines</li>
+                        <li>Membres de la famille proches</li>
+                        <li>Anecdotes et souvenirs particuliers</li>
+                        <li>Contributions ou Impact sur la communauté</li>
+                        <li>Lieux préférés ou Significatifs</li>
+                        <li>Citations ou mots de sagesse</li>
+                    </ul>
+                    <button class="start-btn">Commencer</button>
+                </div>
+
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">1/13 - Nom complet ou surnom</h3>
+                    <input type="text" placeholder="Nom complet ou surnom" class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">2/13 - Date et lieu de naissance</h3>
+                    <input type="date" placeholder="JJ/MM/AAAA" class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">3/13 - Date et lieu de décès</h3>
+                    <input type="date" placeholder="JJ/MM/AAAA" class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">4/13 - Moments marquants de la vie</h3>
+                    <input type="text" placeholder="Exemple : 19 ans, études, découverte de l'informatique"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">5/13 - Metiers ou occupations</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">6/13 - Metiers ou occupations</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">7/13 - Centres d'intérêt, passions, hobbies</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">8/13 - Moments de réussite ou accomplissement</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">9/13 - Trait de caractère ou qualités humaines</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">10/13 - Membres de la famille proches</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">11/13 - Anecdotes et souvenirs particuliers<< /h3>
+                            <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                                class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">12/13 - Contributions ou Impact sur la communauté</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div id="summaryStep" class="bio-step">
+                    <h3 class="text-generate-bio">13/13 - Citations ou mots de sagesse</h3>
+                    <input type="text" placeholder="Exemple : ingénieur, développeur, chef de projet"
+                        class="modal-input" />
+                </div>
+                <div class="modal-footer">
+                    <button class="prev-btn" disabled>Précédent</button>
+                    <button class="next-btn">Suivant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/pages.js"></script>
+</body>
+</html>
