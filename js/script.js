@@ -24,10 +24,6 @@ function newpage() {
 function signup() {
   window.location.href = "signup.html";
 }
-function settings() {
-  window.location.href = "settings.html";
-}
-
 let currentStep = 0;
 const steps = document.querySelectorAll(".step");
 const progressBar = document.querySelector(".progress-bar");
@@ -204,12 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 function creerPage() {
   window.location.href = "pages.html";
 }
-
-
 
 document.getElementById("ask").addEventListener("click", function () {
   openModal("modal-ask");
@@ -229,3 +222,17 @@ function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   modal.classList.add("hidden");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButtons = document.querySelectorAll(".medaillons");
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const details = this.parentElement.nextElementSibling;
+      details.style.display =
+        details.style.display === "none" || details.style.display === ""
+          ? "block"
+          : "none";
+    });
+  });
+});

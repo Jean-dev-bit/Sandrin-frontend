@@ -6,6 +6,7 @@
     <title>Nouvelle Page</title>
     <link rel="stylesheet" href="css/styles-newpage.css" />
   </head>
+
   <body>
     <header>
       <button id="back-button">←</button>
@@ -35,5 +36,31 @@
       </div>
     </main>
     <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const statusRadios = document.querySelectorAll(".status-radio");
+        const statusContainer = document.getElementById("status-container");
+
+        if (!statusContainer) {
+          console.error("L'élément #status-container n'existe pas.");
+          return;
+        }
+
+        statusRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.id === "public") {
+              statusContainer.textContent =
+                "Publique : La page sera accessible à toute personne qui scannera le médaillon, apparaissant ainsi dans le moteur de recherche de DernierInstant. En outre, elle sera indexée par Google, rendant son contenu visible à tous.";
+            } else if (this.id === "protect") {
+              statusContainer.textContent =
+                "Cachée : La page ne sera accessible qu'aux personnes scannant directement le médaillon.";
+            } else if (this.id === "private") {
+              statusContainer.textContent =
+                "Privée : La page ne sera accessible qu'aux personnes disposant du mot de passe ou figurant sur votre liste d'accès autorisé.";
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

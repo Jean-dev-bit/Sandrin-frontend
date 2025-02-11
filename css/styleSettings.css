@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -24,9 +24,9 @@ body {
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
   width: 100%;
-  max-width: 600px; 
+  max-width: 800px;
   z-index: 1000;
 }
 
@@ -37,7 +37,7 @@ body {
   margin-right: auto;
 }
 
-.back-button{
+.back-button {
   background: none;
   border: none;
   color: white;
@@ -46,18 +46,17 @@ body {
 }
 .containers {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin-top: 80px;
 }
 .container {
   background: white;
   padding: 20px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   border-radius: 10px;
   margin-top: 20px;
 }
-
 
 .no-pages {
   color: #050505;
@@ -68,21 +67,21 @@ body {
   gap: 10px;
 }
 
-.pages-feed{
+.pages-feed {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ECE4F3;
+  background-color: #ece4f3;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
-.pages-feed-text{
+.pages-feed-text {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.pages-feed-avatar{
+.pages-feed-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -90,12 +89,72 @@ body {
   cursor: pointer;
   object-fit: cover;
 }
-.pages-feed-title{
+.pages-feed-title {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+.feed-details {
+  display: none;
+  background: #f5f5f5;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.medaillon-btn {
+  background: #692b71;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  font-weight: bold;
+}
+.medaillon-btn1 {
+  background: #ece4f3;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  font-weight: bold;
+}
 
+.reset-btn {
+  background: #8b0000;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  margin-top: 20px;
+}
+.titles {
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+.med {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
 .check {
   display: flex;
   align-items: center;
@@ -106,7 +165,52 @@ body {
   margin-bottom: 5px;
   font-weight: bold;
 }
-.check span{
+.check span {
   font-size: 14px;
   color: #692b71;
+}
+/* Les interrupteurs */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #692b71;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
 }

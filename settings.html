@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styleSettings.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -72,7 +76,7 @@
                 >
               </div>
             </div>
-            <span
+            <!-- <span
               style="
                 color: #692b71;
                 background-color: white;
@@ -81,9 +85,29 @@
                 padding: 10px;
                 font-weight: bold;
               "
+              class="medaillons"
               >&gt;</span
-            >
+            > -->
+            <i
+              class="fa-solid fa-arrow-right-to-bracket toggle-details"
+              data-target="details1"
+              style="color: #692b71; font-size: 14px; padding: 10px"
+            ></i>
           </div>
+          <!-- <div class="feed-details">
+          <p style="font-size: 11px; color: #333; margin-bottom: 10px">
+            Aucun médaillon lié
+          </p>
+          <div class="medaillon-btn">Associer un médaillon</div>
+        </div> -->
+
+          <div class="feed-details" id="details1" style="display: none">
+            <p style="font-size: 11px; color: #333; margin-bottom: 10px">
+              Aucun médaillon lié
+            </p>
+            <div class="medaillon-btn">Associer un médaillon</div>
+          </div>
+
           <div class="pages-feed">
             <div class="pages-feed-text">
               <svg
@@ -121,7 +145,7 @@
                 >
               </div>
             </div>
-            <span
+            <!-- <span
               style="
                 color: #692b71;
                 background-color: white;
@@ -130,24 +154,150 @@
                 padding: 10px;
                 font-weight: bold;
               "
+              class="medaillons"
               >&gt;</span
+            > -->
+            <i
+              class="fa-solid fa-arrow-right-to-bracket toggle-details"
+              data-target="details2"
+              style="color: #692b71; font-size: 14px; padding: 10px"
+            ></i>
+          </div>
+          <div class="feed-details" id="details2" style="display: none">
+            <p
+              style="
+                font-size: 12px;
+                color: #333;
+                margin-bottom: 10px;
+                text-align: justify;
+              "
             >
+              Le status de la page défini sa visibilité <br />
+              <br />
+              <span class="titles">Publique : </span>La page sera accessible à
+              toute personne scannant le médaillon et elle apparaîtra dans le
+              moteur de recherche de dernierinstant. <br />
+              <br />
+              <span class="titles">Cachée : </span>
+              La page ne sera accessible qu'aux personnes scannant directement
+              le médaillon. <br />
+              <br />
+              <span class="titles">Privée : </span> La page ne sera accessible
+              qu'aux personnes disposant du mot de passe ou figurant sur votre
+              liste d'accès autorisé.
+            </p>
+            <div class="med">
+              <div class="medaillon-btn">Publique</div>
+              <div class="medaillon-btn1">Cachée</div>
+              <div class="medaillon-btn1">Privée</div>
+            </div>
           </div>
         </div>
+        <!-- <div class="check">
+        <span>Activer les commentaires</span>
+        <input type="checkbox" name="commentaires" id="commentaires" />
+      </div>
+      <div class="check">
+        <span>Modérer les commentaires</span>
+        <input type="checkbox" name="commentaires" id="commentaires" />
+      </div>
+      <div class="check">
+        <span>Bouton de partage</span>
+        <input type="checkbox" name="commentaires" id="commentaires" />
+      </div> -->
+
         <div class="check">
           <span>Activer les commentaires</span>
-          <input type="checkbox" name="commentaires" id="commentaires" />
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
+
         <div class="check">
           <span>Modérer les commentaires</span>
-          <input type="checkbox" name="commentaires" id="commentaires" />
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
+
         <div class="check">
           <span>Bouton de partage</span>
-          <input type="checkbox" name="commentaires" id="commentaires"/>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
+
+        <button type="reset" class="reset-btn">Supprimer la page</button>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButtons = document.querySelectorAll(".medaillons");
+
+        toggleButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const details = this.parentElement.nextElementSibling;
+            details.style.display =
+              details.style.display === "none" || details.style.display === ""
+                ? "block"
+                : "none";
+          });
+        });
+      });
+    </script>
     <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Gérer l'affichage des détails des feeds
+        const detailIcons = document.querySelectorAll(".toggle-details");
+
+        detailIcons.forEach((icon) => {
+          icon.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              targetElement.style.display =
+                targetElement.style.display === "none" ||
+                targetElement.style.display === ""
+                  ? "block"
+                  : "none";
+            }
+          });
+        });
+
+        // Alerte pour la suppression de page
+        document
+          .querySelector(".reset-btn")
+          .addEventListener("click", function () {
+            if (
+              confirm(
+                "Êtes-vous sûr de vouloir supprimer cette page ? Cette action est irréversible !"
+              )
+            ) {
+              alert("Page supprimée !");
+              // Ici, ajoute le code pour supprimer la page si nécessaire
+            }
+          });
+      });
+
+      document
+        .querySelectorAll(".medaillon-btn, .medaillon-btn1")
+        .forEach((btn) => {
+          btn.addEventListener("click", function () {
+            document
+              .querySelectorAll(".medaillon-btn, .medaillon-btn1")
+              .forEach((b) => {
+                b.style.backgroundColor = "#e0e0e0"; // Désactive les autres
+                b.style.color = "#333";
+              });
+            this.style.backgroundColor = "#692b71"; // Active le bouton sélectionné
+            this.style.color = "#fff";
+          });
+        });
+    </script>
   </body>
 </html>

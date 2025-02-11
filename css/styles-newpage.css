@@ -25,7 +25,7 @@ header {
   margin-right: auto;
   padding: 20px;
   width: 60%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: left;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -64,7 +64,7 @@ p {
   padding: 20px;
   border-radius: 10px;
   width: 60%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: left;
   height: 550px;
 }
@@ -153,6 +153,12 @@ input {
     color: white;
     font-size: 14px;
   }
+  #status-container {
+    color: #333;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: justify;
+  }
 }
 
 .status-radio {
@@ -184,12 +190,9 @@ input {
   color: white;
 }
 
-#public:checked ~ #status-container {
-  content: "Votre page est publique et visible par tout le monde.";
-}
-#protect:checked ~ #status-container {
-  content: "Votre page est cachée et accessible seulement via un lien.";
-}
-#private:checked ~ #status-container {
-  content: "Votre page est privée et seulement visible par vous.";
+#status-container {
+  color: #333;
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: justify;
 }
