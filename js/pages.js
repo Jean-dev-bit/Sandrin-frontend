@@ -13,24 +13,6 @@ document.querySelectorAll(".tab-btn").forEach((button) => {
   });
 });
 
-// const linkInput = document.getElementById("linkInput");
-// const addLinkBtn = document.getElementById("addLink");
-// const linksList = document.getElementById("linksList");
-
-// addLinkBtn.addEventListener("click", () => {
-//   const link = linkInput.value.trim();
-//   if (link) {
-//     const linkItem = document.createElement("div");
-//     linkItem.className = "link-item";
-//     linkItem.innerHTML = `
-//             <span>${link}</span>
-//             <i class="fa-regular fa-trash-can"></i>
-//         `;
-//     linksList.appendChild(linkItem);
-//     linkInput.value = "";
-//   }
-// });
-
 const linkInput = document.getElementById("linkInput");
 const addLinkBtn = document.getElementById("addLink");
 const linksList = document.getElementById("linksList");
