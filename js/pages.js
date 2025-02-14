@@ -30,11 +30,11 @@ addLinkBtn.addEventListener("click", () => {
     // Ajout de l'événement pour supprimer le lien
     const trashIcon = linkItem.querySelector("i");
     trashIcon.addEventListener("click", () => {
-      linkItem.remove(); // Supprime l'élément linkItem de la liste
+      linkItem.remove(); 
     });
 
     linksList.appendChild(linkItem);
-    linkInput.value = ""; // Réinitialise le champ input
+    linkInput.value = ""; 
   }
 });
 
